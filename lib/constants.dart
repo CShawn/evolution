@@ -6,7 +6,7 @@ const Color greyColor = Color(0xFFBDBDBD);
 
 const String fontBigSeal = 'BigSeal';
 const String fontSmallSeal = 'SmallSeal';
-const String fontOfficialScript = 'OfficialScript';
+//const String fontOfficialScript = 'OfficialScript';
 
 const String databaseName = "evolution.db";
 const String tableCharacter = "characters";

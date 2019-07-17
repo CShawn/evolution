@@ -12,12 +12,13 @@ class CharacterDetailPage extends StatelessWidget {
   double _secondaryCharacterRectSize = 80;
   double _secondaryCharacterFontSize = 60;
   double _secondaryCharacterFontSize2 = 45;
+  int _originFontCount = 2;
 
   CharacterDetailPage(this._character);
 
   @override
   Widget build(BuildContext context) {
-    int count =  3 + (_character.traditional?.length ?? 0);
+    int count =  _originFontCount + (_character.traditional?.length ?? 0);
     return Scaffold(
       appBar: AppBar(title: Text(_character.character)),
       body: SingleChildScrollView(
@@ -111,10 +112,10 @@ class CharacterDetailPage extends StatelessWidget {
       font = fontBigSeal;
     } else if(index == 1) {
       font = fontSmallSeal;
-    } else if(index == 2) {
-      font = fontOfficialScript;
+//    } else if(index == 2) {
+//      font = fontOfficialScript;
     } else {
-      int i = index - 3;
+      int i = index - _originFontCount;
       if(i >= 0 && i < _character.traditional.length) {
         text = _character.traditional[i];
       } else {
@@ -126,7 +127,7 @@ class CharacterDetailPage extends StatelessWidget {
         text,
         style: TextStyle(
           fontFamily: font,
-          fontSize: index < 3 ? _secondaryCharacterFontSize : _secondaryCharacterFontSize2,
+          fontSize: index < _originFontCount ? _secondaryCharacterFontSize : _secondaryCharacterFontSize2,
         )
       ),
 //      decoration: BoxDecoration(

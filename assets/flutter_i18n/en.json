@@ -3,14 +3,14 @@
   "search_hint": "Search...",
   "search": "Search",
   "switch_style": "拼音/部首",
-  "retrieve_failure": "Sorry, no such character",
+  "retrieve_failure": "Sorry, no such chinese character",
   "pinyin": "拼音",
   "radical": "部首",
   "stroke": "笔画",
   "fiveStroke": "五笔",
   "areaCode": "区位码",
   "meaning": "释义",
-  "init_progress": "Loading for the first time",
+  "init_progress": "Loading Chinese Characters library for the first time",
   "loading": "Loading...",
   "about": "About"
 }
