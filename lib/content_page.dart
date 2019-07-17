@@ -36,7 +36,8 @@ class ListPageState extends State<ListPage> {
           children: <Widget>[
             CircularProgressIndicator(),
             Container(
-              child: Text("${FlutterI18n.translate(context, strInitProgress)}：$progress%"),
+              child: Text(progress == 0 ? FlutterI18n.translate(context, strLoading) :
+              "${FlutterI18n.translate(context, strInitProgress)}：$progress%"),
               margin: EdgeInsets.only(top: 15),
             )
           ],

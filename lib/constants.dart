@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const Color mainColor = Color(0xFF303030);
+const Color mainColor = Color(0xFF424242);
 const Color strokeColor = Colors.red;
 const Color greyColor = Color(0xFFBDBDBD);
 
@@ -24,9 +24,10 @@ const String strFiveStroke = "fiveStroke";
 const String strAreaCode = "areaCode";
 const String strMeaning = "meaning";
 const String strInitProgress = "init_progress";
+const String strLoading = "loading";
 const String strAbout = "about";
 
 const String stokeStr = "画";
 const String leadingText = "字";
-const String author = "ShawnChen";
+const String author = "Shawn Chen";
 const String copyRight = "CopyRight ©2019-9012";
