@@ -87,9 +87,21 @@ flutter:
       fonts:
         - asset: assets/fonts/BigSeal.ttf
 
+    - family: HYBigSeal
+      fonts:
+        - asset: assets/fonts/HYBigSeal.ttf
+
     - family: SmallSeal
       fonts:
         - asset: assets/fonts/SmallSeal.ttf
+
+    - family: SquareSeal
+      fonts:
+        - asset: assets/fonts/SquareSeal.ttf
+
+    - family: NineFoldSeal
+      fonts:
+        - asset: assets/fonts/NineFoldSeal.otf
 
 #    - family: OfficialScript
 #      fonts:
@@ -98,6 +110,7 @@ flutter:
     - assets/flutter_i18n/zh.json
     - assets/flutter_i18n/en.json
     - assets/characters.csv
+    - assets/pinyin.csv
     - assets/pinyin.csv
     - assets/radicals.csv
     - assets/logo.png

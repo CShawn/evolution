@@ -1,3 +1,5 @@
+import 'package:evolution/character.dart';
+import 'package:evolution/text_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:package_info/package_info.dart';
@@ -31,7 +33,7 @@ class HomePageState extends State<HomePage> {
                 child: TextField(
                   controller: textEditingController,
                   keyboardType: TextInputType.text,
-                  maxLength: 1,
+                  // maxLength: 1,
                   cursorColor: Colors.white,
                   decoration: InputDecoration(
                     counterText: "",
@@ -101,19 +103,33 @@ class HomePageState extends State<HomePage> {
     if(text.isEmpty || pageKey.currentState.initializing) {
       return;
     }
-    DatabaseUtil().queryCharacter(text).then((character) {
-      if(character != null) {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => CharacterDetailPage(character))
-        );
-      } else {
-        _scaffoldKey.currentState.showSnackBar(
-            SnackBar(content: Text(
-                "${FlutterI18n.translate(context, strRetrieveFailure)}: $text"
-            ))
-        );
-      }
-    });
+    if (text.length == 1) {
+      DatabaseUtil().queryCharacter(text).then((character) {
+        if (character != null) {
+          Navigator.push(context,
+              MaterialPageRoute(
+                  builder: (context) => CharacterDetailPage(character))
+          );
+        } else {
+          // _scaffoldKey.currentState.showSnackBar(
+          //     SnackBar(content: Text(
+          //         "${FlutterI18n.translate(context, strRetrieveFailure)}: $text"
+          //     ))
+          // );
+
+          // 未找到字时直展示字体
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) =>
+                  CharacterDetailPage(Character.create(text)))
+          );
+        }
+      });
+    } else {
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) =>
+              TextPage(text))
+      );
+    }
   }
 
   _showAboutDialog() async {

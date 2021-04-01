@@ -24,6 +24,8 @@ class Character {
 
   Character(this.stroke, {this.isTitle = true});
 
+  Character.create(this.character);
+
   Character.fromMap(Map<String, dynamic> map) {
     character = map[columnCharacter];
     traditional = map[columnTraditional].toString().split(charSeparator);

@@ -77,11 +77,11 @@ class _MyHomePageState extends State<MyApp> {
       });
 
       content = await rootBundle.loadString("assets/pinyin.csv");
-      list = const CsvToListConverter().convert(content);
-      list.forEach((item) {
+      List<List<dynamic>> list2 = const CsvToListConverter().convert(content);
+      list2.forEach((item) {
         DatabaseUtil().insertCharacterIndex(CharacterIndex.fromList(item))
             .then((result) {
-          print("py-in:$result/${list.length}");
+          print("py-in:$result/${list2.length}");
           if(result > 0) {
             temp = result * 100 ~/ count;
             homePageKey.currentState.pageKey.currentState.setState(() {
@@ -93,11 +93,11 @@ class _MyHomePageState extends State<MyApp> {
       progress += temp;
 
       content = await rootBundle.loadString("assets/radicals.csv");
-      list = const CsvToListConverter().convert(content);
+      List<List<dynamic>> list3 = const CsvToListConverter().convert(content);
       list.forEach((item) {
         DatabaseUtil().insertCharacterIndex(CharacterIndex.fromList(item))
             .then((result) {
-          print("ra-in:$result/${list.length}");
+          print("ra-in:$result/${list3.length}");
           if(result > 0) {
             temp = result * 100 ~/ count;
             homePageKey.currentState.pageKey.currentState.setState(() {

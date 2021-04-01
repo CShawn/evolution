@@ -12,5 +12,6 @@
   "meaning": "释义",
   "init_progress": "Loading Chinese Characters library for the first time",
   "loading": "Loading...",
-  "about": "About"
+  "about": "About",
+  "text": "Text"
 }

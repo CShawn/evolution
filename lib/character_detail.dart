@@ -12,7 +12,7 @@ class CharacterDetailPage extends StatelessWidget {
   double _secondaryCharacterRectSize = 80;
   double _secondaryCharacterFontSize = 60;
   double _secondaryCharacterFontSize2 = 45;
-  int _originFontCount = 2;
+  int _originFontCount = 5;
 
   CharacterDetailPage(this._character);
 
@@ -111,9 +111,13 @@ class CharacterDetailPage extends StatelessWidget {
     if(index == 0) {
       font = fontBigSeal;
     } else if(index == 1) {
+      font = fontHYBigSeal;
+    } else if(index == 2) {
       font = fontSmallSeal;
-//    } else if(index == 2) {
-//      font = fontOfficialScript;
+    } else if (index == 3) {
+      font = fontSquareSeal;
+    } else if (index == 4) {
+      font = fontNineFoldSeal;
     } else {
       int i = index - _originFontCount;
       if(i >= 0 && i < _character.traditional.length) {
